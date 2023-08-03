@@ -1,0 +1,36 @@
+{
+  "name": "anonforum",
+  "version": "1.0.0",
+  "description": "Slack app enabling anonymity on an admin-specified channel",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawinsw/anonforum.git"
+  },
+  "keywords": [
+    "anonforum",
+    "anonymous",
+    "forum",
+    "channel",
+    "slack",
+    "app"
+  ],
+  "author": "AirFactor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kawinsw/anonforum/issues"
+  },
+  "homepage": "https://github.com/kawinsw/anonforum#readme",
+  "dependencies": {
+    "airtable": "^0.10.1",
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
