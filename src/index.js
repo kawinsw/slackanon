@@ -1,7 +1,6 @@
 const express = require('express');
 
 const { ack, handleError } = require('./general.js');
-// const slackUtils = require('./slackUtils.js');
 const postModal = require('./postModal.js');
 const slackInstall = require('./slackInstall.js');
 const slackAdmin = require('./slackAdmin.js');
@@ -16,6 +15,7 @@ const LISTENING_PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.urlencoded({
   extended: false,
+  // if necessary, add the following:
   // limit: 5000,
   verify: slackVerify
 }));
