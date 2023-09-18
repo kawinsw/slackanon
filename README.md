@@ -9,11 +9,13 @@ Usage requires implementation of a `database.js` module that exposes `getDatabas
 - `getWorkspace(teamId)`
 - `addWorkspace(teamId, slackToken, channelId)`
 
-Each of the above methods should return a `Promise` containing an object representing a record of a Slack workspace, with the following methods. Unless otherwise stated, each method should return a `String`.
-- `getAll()` - returns all fields as an object
-- `getTeamId()`
-- `getSlackToken()`
-- `getChannelId()`
+Each of the above methods should return a `Promise` containing an object representing a record of a Slack workspace. It should satisfy an interface (which we will arbitrarily refer to as `WorkspaceRecord`) with the following methods:
+- `getTeamId(): string`
+- `getSlackToken(): string`
+- `getChannelId(): string`
+- `getAll()` - returns all fields as an object, only used for debugging
+- `updateSlackToken(newSlackToken: string): Promise<WorkspaceRecord>`
+- `updateChannelId(newChannelId: string): Promise<WorkspaceRecord>`
 
 `getWorkspace(teamId)` should throw a `NO_RECORD_FOUND_ERROR` when the given `teamId` is not found in the database.
 
